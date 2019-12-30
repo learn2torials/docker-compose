@@ -2,8 +2,10 @@ version: '3'
 services:
   redis-server:
     image: redis
+    container_name: redis
   node-server:
     build: .
+    container_name: node
     restart: always
     ports:
       - '8080:3000'
