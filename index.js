@@ -14,7 +14,7 @@ client.set('visits', 0);
 // visits of the user
 app.get('/', (req, res) => {
   client.get('visits', (err, visits) => {
-    res.send('Total Visits: ' + visits);
+    res.send('Total Visits: ' + Number(parseInt(visits) + parseInt(1)) );
     client.set('visits', parseInt(visits) + 1);
   });
 });
